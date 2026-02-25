@@ -1,0 +1,81 @@
+<main class="product-main">
+  <section class="gallery">
+    <div class="main-image">
+      <img id="mainImg" src="{{#if product.imageUrl}}{{product.imageUrl}}{{else}}{{product.images.[0].large}}{{/if}}" alt="{{product.name}}">
+    </div>
+    <div class="thumbs">
+      {{#if product.images}}
+        {{#each product.images}}
+          <img class="thumb" src="{{this.thumb}}" data-large="{{this.large}}">
+        {{/each}}
+      {{else}}
+        {{#if product.imageUrl}}
+          <img class="thumb" src="{{product.imageUrl}}" data-large="{{product.imageUrl}}">
+        {{/if}}
+      {{/if}}
+    </div>
+  </section>
+
+  <aside class="details">
+    <h1 class="product-name">{{product.name}}</h1>
+    <div class="price-row">
+      <div class="price">₹{{product.price}}</div>
+      {{#if product.comparePrice}}<div class="compare">₹{{product.comparePrice}}</div>{{/if}}
+    </div>
+
+    {{#if product.sku}}<p class="sku">SKU: {{product.sku}}</p>{{/if}}
+
+    <div class="selectors">
+      <label>
+        Size
+        <select id="sizeSelect">
+          {{#if product.sizes}}
+            {{#each product.sizes}}
+              <option>{{this}}</option>
+            {{/each}}
+          {{else}}
+            <option>M</option>
+          {{/if}}
+        </select>
+      </label>
+
+      <label class="qty">
+        Qty
+        <div class="qty-controls">
+          <button id="decr">-</button>
+          <input id="qtyInput" type="number" value="1" min="1">
+          <button id="incr">+</button>
+        </div>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button id="addCart" class="btn primary" data-product-id="{{product._id}}">Add to cart</button>
+      <button id="buyNow" class="btn primary" data-product-id="{{product._id}}">Buy Now</button>
+      <button id="wish" class="btn ghost" data-product-id="{{product._id}}"><i class="fas fa-heart"></i> Wishlist</button>
+    </div>
+
+    <section class="description">
+      <h3>Product Details</h3>
+      <p>{{product.description}}</p>
+    </section>
+  </aside>
+</main>
+
+<section class="related">
+  <h2>Related products</h2>
+  <div class="related-grid" id="relatedGrid"></div>
+</section>
+<script id="productData" type="application/json">
+{
+  "_id": "{{product._id}}",
+  "name": "{{product.name}}",
+  "description": "{{product.description}}",
+  "price": {{product.price}},
+  "comparePrice": {{#if product.comparePrice}}{{product.comparePrice}}{{else}}null{{/if}},
+  "sku": "{{product.sku}}",
+  "category": "{{product.category}}",
+  "imageUrl": "{{product.imageUrl}}",
+  "sizes": {{#if product.sizes}}[{{#each product.sizes}}"{{this}}"{{#unless @last}},{{/unless}}{{/each}}]{{else}}[]{{/if}}
+}
+</script>

@@ -1,0 +1,61 @@
+:root{
+  --black:#111;
+  --muted:#666;
+  --accent:#111;
+}
+*{box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{margin:0;color:var(--black);background:#fff}
+.product-header{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid #eee}
+.back-link{color:var(--muted);text-decoration:none}
+.logo{margin-left:auto;font-weight:800;text-transform:uppercase;font-family:'Montserrat',sans-serif}
+.product-main{display:grid;grid-template-columns:1fr 420px;gap:28px;max-width:1100px;margin:36px auto;padding:0 20px}
+.gallery .main-image{background:#f7f7f7;border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center}
+.gallery img{max-width:100%;border-radius:8px}
+.thumbs{display:flex;gap:10px;margin-top:12px}
+.thumb{width:80px;height:80px;object-fit:cover;border-radius:8px;cursor:pointer;opacity:.9;border:2px solid transparent}
+.thumb:hover{opacity:1;border-color:#ddd}
+.details{padding:6px}
+.product-name{font-family:'Montserrat',sans-serif;margin:0 0 8px;font-size:22px}
+.price-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.price{font-size:20px;font-weight:700}
+.compare{color:#999;text-decoration:line-through}
+.sku{color:var(--muted);font-size:13px}
+.selectors{display:flex;gap:12px;margin:14px 0;align-items:center}
+select{padding:8px;border:1px solid #ddd;border-radius:8px}
+.qty-controls{display:flex;align-items:center;border:1px solid #ddd;border-radius:8px;overflow:hidden}
+.qty-controls button{background:#fff;border:0;padding:8px 12px;cursor:pointer}
+.qty-controls input{width:48px;border:0;padding:8px;text-align:center}
+.actions{display:flex;gap:12px;margin-top:10px}
+.btn{padding:12px 18px;border-radius:10px;cursor:pointer;border:1px solid #ddd;background:#fff}
+.btn.primary{background:var(--accent);color:#fff;border:0}
+.btn.ghost{background:transparent}
+.description{margin-top:18px;color:var(--muted)}
+.description h3{margin:0 0 8px}
+.related{max-width:1100px;margin:36px auto;padding:0 20px}
+.related-grid{display:flex;gap:14px;margin-top:12px}
+.card{display:block;width:180px;text-decoration:none;color:inherit}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+.card-title{font-weight:600;margin-top:8px}
+.card-price{color:var(--muted);font-size:14px}
+
+.buy-main{max-width:800px}
+.buy-grid{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start}
+.buy-summary img{width:100%;height:auto;object-fit:cover;border-radius:10px;display:none}
+.buy-form{flex:1}
+.buy-fields{display:grid;grid-template-columns:1fr;gap:10px}
+.buy-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.buy-actions{display:flex;gap:10px;margin-top:16px}
+.buy-group{display:flex;flex-direction:column;gap:6px}
+.buy-label{font-size:12px;font-weight:600;color:#333;margin:2px 2px}
+.auth-input{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;font-size:14px}
+.auth-input:focus{outline:none;border-color:#111;box-shadow:0 0 0 3px rgba(17,17,17,0.08)}
+
+@media (max-width:900px){
+  .product-main{grid-template-columns:1fr;}
+  .details{order:2}
+}
+@media (max-width:768px){
+  .buy-grid{grid-template-columns:1fr}
+  .buy-summary img{display:block;max-width:220px;margin-bottom:8px}
+  .buy-row-2{grid-template-columns:1fr}
+}

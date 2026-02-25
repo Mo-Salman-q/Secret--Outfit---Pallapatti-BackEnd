@@ -1,0 +1,42 @@
+<main class="product-main" style="max-width:800px;margin:24px auto;padding:0 16px;">
+  <h1 style="font-weight:800; font-size:22px; margin-bottom:12px;">Order Review</h1>
+  {{#if error}}
+    <p style="color:#c00">{{error}}</p>
+  {{else}}
+    <div id="previewProduct" style="font-weight:600; margin-bottom:8px;"></div>
+    <div id="previewCustomer" style="color:#555; margin-bottom:6px;"></div>
+    <div id="previewTotal" style="font-weight:700; margin-bottom:16px;"></div>
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+      <a id="sendWhatsapp" class="btn-whatsapp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Send on WhatsApp</a>
+      <a href="/shop" class="btn ghost">Back to Shop</a>
+    </div>
+    <div style="color:#666; font-size:13px; margin-top:6px;">
+      Send this on WhatsApp, Our Team Will reach U shortly
+    </div>
+    <script id="orderData" type="application/json">
+      {
+        "whatsapp": "{{whatsapp}}",
+        "order": {
+          "orderId": "{{order.orderId}}",
+          "productId": "{{order.product}}",
+          "qty": "{{order.qty}}",
+          "size": "{{order.size}}"
+        },
+        "customer": {
+          "name": "{{order.customer.name}}",
+          "phone": "{{order.customer.phone}}",
+          "address1": "{{order.customer.address1}}",
+          "address2": "{{order.customer.address2}}",
+          "city": "{{order.customer.city}}",
+          "state": "{{order.customer.state}}",
+          "zip": "{{order.customer.zip}}"
+        },
+        "product": {
+          "name": "{{product.name}}",
+          "price": {{product.price}},
+          "imageUrl": "{{#if product.imageUrl}}{{product.imageUrl}}{{/if}}"
+        }
+      }
+    </script>
+  {{/if}}
+</main>

@@ -1,0 +1,36 @@
+<!-- Header -->
+<header class="header">
+  <button class="icon-btn hamburger" id="menuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="logo">SECRET OUTFITS</div>
+  <nav class="desktop-nav">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/shop" class="nav-link">Shop</a>
+    
+    {{#if user}}
+      <button class="auth-button logout-btn" data-auth-button onclick="authManager.logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    {{else}}
+      <button class="auth-button login-btn" data-auth-button onclick="window.location.href='/login'">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+    {{/if}}
+  </nav>
+  <div class="search-bar-desktop">
+    <input type="text" placeholder="Search products..." />
+  </div>
+  <div class="icon-group">
+    <button class="icon-btn" id="searchBtn">
+      <i class="fas fa-search"></i>
+    </button>
+    <button class="icon-btn" id="wishlistBtn" onclick="window.location.href='/wishlist'">
+      <i class="far fa-heart"></i>
+    </button>
+    <button class="icon-btn" id="cartBtn" onclick="window.location.href='/cart'">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-badge">0</span>
+    </button>
+  </div>
+</header>

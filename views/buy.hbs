@@ -1,0 +1,55 @@
+<main class="product-main buy-main" style="max-width:800px;margin:24px auto;padding:0 16px;">
+  <h1 style="font-weight:800; font-size:22px; margin-bottom:12px;">Delivery Details</h1>
+  <p id="buyProductSummary" style="color:#666; margin-bottom:16px;"></p>
+  <div class="buy-grid">
+    <div class="buy-summary">
+      <img id="buyProductImage" src="" alt="Product">
+    </div>
+    <form method="POST" action="/order/preview" class="buy-form">
+      <input type="hidden" name="productId" value="{{productId}}">
+      <input type="hidden" name="qty" value="{{qty}}">
+      <input type="hidden" name="size" value="{{size}}">
+
+      <div class="buy-fields">
+        <div class="buy-group">
+          <label class="buy-label">Full Name *</label>
+          <input class="auth-input" name="name" placeholder="John Doe" required>
+        </div>
+        <div class="buy-group">
+          <label class="buy-label">Phone *</label>
+          <input class="auth-input" name="phone" placeholder="9876543210" required>
+        </div>
+        <div class="buy-group">
+          <label class="buy-label">Email (optional)</label>
+          <input class="auth-input" name="email" placeholder="john@example.com">
+        </div>
+        <div class="buy-group">
+          <label class="buy-label">Address Line 1 *</label>
+          <input class="auth-input" name="address1" placeholder="Street, House no." required>
+        </div>
+        <div class="buy-group">
+          <label class="buy-label">Address Line 2</label>
+          <input class="auth-input" name="address2" placeholder="Area, Landmark">
+        </div>
+        <div class="buy-row-2">
+          <div class="buy-group">
+            <label class="buy-label">City *</label>
+            <input class="auth-input" name="city" placeholder="City" required>
+          </div>
+          <div class="buy-group">
+            <label class="buy-label">State *</label>
+            <input class="auth-input" name="state" placeholder="State" required>
+          </div>
+        </div>
+        <div class="buy-group">
+          <label class="buy-label">PIN/ZIP *</label>
+          <input class="auth-input" name="zip" placeholder="600001" required>
+        </div>
+      </div>
+      <div class="buy-actions">
+        <button class="btn primary" type="submit">Review Order</button>
+        <a href="/shop" class="btn ghost">Cancel</a>
+      </div>
+    </form>
+  </div>
+</main>

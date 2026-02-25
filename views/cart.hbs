@@ -1,0 +1,26 @@
+<main class="shop-main">
+  <section class="category-section">
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Your Cart</h1>
+        <p>Review items and proceed to delivery</p>
+      </div>
+    </div>
+    <div class="products-grid" id="cartList"></div>
+    <div style="padding: 24px 16px; border-top: 1px solid #eee; margin-top: 12px;">
+      <div style="display:flex; justify-content: space-between; font-weight:600; font-size:18px;">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <div style="display:flex; gap:12px; margin-top:16px;">
+        <a href="/shop" class="quick-add" style="text-align:center;">Continue Shopping</a>
+      </div>
+    </div>
+  </section>
+  <div id="emptyCart" style="display:none; padding:40px 16px; text-align:center; color:#666;">
+    <p>Your cart is empty.</p>
+    <button class="quick-add" style="max-width:260px; margin:20px auto 0;" onclick="window.location.href='/shop'">
+      Browse Products
+    </button>
+  </div>
+</main>

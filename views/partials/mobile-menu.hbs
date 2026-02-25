@@ -1,0 +1,38 @@
+<!-- Mobile Menu Drawer -->
+<div class="drawer" id="mobileMenu" style="right: -100%">
+  <div class="drawer-header">
+    <h3 class="drawer-title">Menu</h3>
+    <div class="drawer-close mobile-close">
+      <i class="fas fa-times"></i>
+    </div>
+  </div>
+  <nav
+    style="
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0 16px;
+    "
+  >
+    <a href="/" class="nav-link">Home</a>
+    <a href="/shop" class="nav-link">Shop</a>
+    <a href="#" class="nav-link">Categories</a>
+    <a href="#" class="nav-link">New Arrivals</a>
+    {{#if user}}
+      <a href="#" class="auth-link logout-link" data-auth-link onclick="authManager.logout(); return false;">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+    {{else}}
+      <a href="/login" class="auth-link login-link" data-auth-link>
+        <i class="fas fa-sign-in-alt"></i> Login
+      </a>
+    {{/if}}
+  </nav>
+</div>
+
+
+
+
+
+
+

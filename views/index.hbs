@@ -1,0 +1,61 @@
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <div>
+    <a href="/shop" class="btn">
+      <div style="margin-top: 14px"></div>
+    </a>
+  </div>
+</section>
+
+<!-- Main Content - Home Page -->
+<main id="mainContent">
+  <section class="categories-grid">
+     <h2 class="category-title" style="color: #111; text-align: center;">Shop by Category</h2>
+    <div class="category-card" onclick="location.href = '/shop?category=Shirts'">
+      <img
+        src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        alt="Shirts"
+      />
+      <div class="category-overlay">
+        <h2 class="category-title">Shirts</h2>
+      </div>
+    </div>
+    <div class="category-card" onclick="location.href = '/shop?category=Pants'">
+      <img
+        src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        alt="Pants"
+      />
+      <div class="category-overlay">
+        <h2 class="category-title">Pants</h2>
+      </div>
+    </div>
+    <div class="category-card" onclick="location.href = '/shop?category=Fragrance'">
+      <img
+        src="https://images.unsplash.com/photo-1541643600914-78b084683601?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        alt="Fragrance"
+      />
+      <div class="category-overlay">
+        <h2 class="category-title">Fragrance</h2>
+      </div>
+    </div>
+  </section>
+  <section id="new-arrivals" class="anchor-section">
+    <img src="/banner/new-arrival banner.png" alt="New Arrival Banner" style="width: 100%; margin: 40px 0; border-radius: 8px;" />
+  </section>
+</main>
+<!-- Fast Moving Section -->
+<section class="shop-main" style="margin-top:24px;">
+  <h2 class="category-title" style="color:#111;text-align:center;margin-bottom:8px;">Fast Moving</h2>
+  <div class="products-grid">
+    {{#each fastMoving}}
+      <a href="/product?id={{this._id}}" class="product-card">
+        <button class="product-badge" style="right:10px; left:auto; background:#111" onclick="event.preventDefault(); event.stopPropagation();" data-wishlist-toggle="{{this._id}}"><i class="far fa-heart"></i></button>
+        <img src="{{#if this.imageUrl}}{{this.imageUrl}}{{else}}{{this.images.[0].thumb}}{{/if}}" class="product-image" alt="{{this.name}}">
+        <div class="product-info">
+          <h3 class="product-title">{{this.name}}</h3>
+          <p class="product-price">₹{{this.price}}{{#if this.comparePrice}} <span style="text-decoration: line-through; color: #999; font-size: 14px; margin-left: 5px;">₹{{this.comparePrice}}</span>{{/if}}</p>
+        </div>
+      </a>
+    {{/each}}
+  </div>
+</section>
