@@ -17,6 +17,16 @@
       <link rel="stylesheet" href="/css/{{this}}" />
     {{/each}}
   {{/if}}
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QVBE2723KJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QVBE2723KJ');
+</script>
 </head>
 <body>
   {{> loader}}
